@@ -1,5 +1,6 @@
-CREATE TABLE product (
-    id TEXT PRIMARY KEY UNIQUE NOT NULL,
-    name TEXT NOT NULL,
-    price INTEGER NOT NULL
+CREATE TABLE `auth_api`.`product` (
+    `id` VARCHAR(45) NOT NULL,
+    `name` VARCHAR(45) NULL,
+    `price` INT NULL,
+    PRIMARY KEY (`id`)
 );

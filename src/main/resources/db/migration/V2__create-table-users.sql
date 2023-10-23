@@ -1,6 +1,7 @@
-CREATE TABLE users (
-    id TEXT PRIMARY KEY UNIQUE NOT NULL,
-    login TEXT NOT NULL UNIQUE,
-    password TEXT NOT NULL,
-    role TEXT NOT NULL
+CREATE TABLE `auth_api`.`users` (
+    `id` VARCHAR(45) NOT NULL,
+    `login` VARCHAR(45) NOT NULL,
+    `password` VARCHAR(45) NOT NULL,
+    `role` VARCHAR(45) NOT NULL,
+    PRIMARY KEY (`id`)
 );
