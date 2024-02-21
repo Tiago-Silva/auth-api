@@ -1,10 +1,10 @@
 # Auth api java/spring-boot/spring-security e clean architecture
 
 <h1 align="center">
-    <img src="./public/clean-architecture-diagram-1.png" width="300"/>
+    <img src="./public/clean-architecture-diagram-1.png" width="600"/>
 </h1>
 <h1 align="center">
-    <img src="./public/clean-architecture-diagram-2.png" width="300"/>
+    <img src="./public/clean-architecture-diagram-2.png" width="600"/>
 </h1>
 
 ## 💻 Requisitos
