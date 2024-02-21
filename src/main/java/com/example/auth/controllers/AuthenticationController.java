@@ -23,10 +23,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class AuthenticationController {
     @Autowired
     private AuthenticationManager authenticationManager;
-    @Autowired
-    private UserRepository repository;
+//    @Autowired
+//    private UserRepository repository;
     @Autowired
     private TokenService tokenService;
+    @Autowired
+    private UserRepository criteriaRepository;
 
     @PostMapping("/login")
     public ResponseEntity<LoginResponseDTO> login(@RequestBody @Valid AuthenticationDTO data){
@@ -40,12 +42,12 @@ public class AuthenticationController {
 
     @PostMapping("/register")
     public ResponseEntity<HttpStatus> register(@RequestBody @Valid RegisterDTO data){
-        if(this.repository.findByLogin(data.login()) != null) return ResponseEntity.badRequest().build();
+        if(this.criteriaRepository.getUserByLogin(data.login()) != null) return ResponseEntity.badRequest().build();
 
         String encryptedPassword = new BCryptPasswordEncoder().encode(data.password());
-        User newUser = new User(data.login(), encryptedPassword, data.role());
+        User newUser = new User(data, encryptedPassword);
 
-        this.repository.save(newUser);
+        this.criteriaRepository.save(newUser);
 
         return ResponseEntity.ok().build();
     }
